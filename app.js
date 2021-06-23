@@ -1,22 +1,27 @@
-var express = require('express');
-var exphbs  = require('express-handlebars');
-var port = process.env.PORT || 3000
+const express = require('express')
+const exphbs = require('express-handlebars')
+const port = process.env.PORT || 3000
+const path = require('path')
+const createPreference = require('./mercadopago/index')
 
-var app = express();
- 
-app.engine('handlebars', exphbs());
-app.set('view engine', 'handlebars');
+const app = express()
 
-app.use(express.static('assets'));
- 
-app.use('/assets', express.static(__dirname + '/assets'));
+app.engine('handlebars', exphbs())
+app.set('view engine', 'handlebars')
+
+app.use(express.static('assets'))
+
+app.use('/assets', express.static(path.join(__dirname) + '/assets'))
 
 app.get('/', function (req, res) {
-    res.render('home');
-});
+  res.render('home')
+})
 
-app.get('/detail', function (req, res) {
-    res.render('detail', req.query);
-});
+app.get('/detail', async (req, res) => {
+  const data = req.query
+  const preferenceId = await createPreference(req.query)
+  data.preferenceId = preferenceId
+  res.render('detail', data)
+})
 
-app.listen(port);
+app.listen(port)
