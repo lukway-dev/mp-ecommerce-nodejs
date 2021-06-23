@@ -44,7 +44,7 @@ app.get('/success', (req, res) => {
 })
 
 app.get('/failure', (req, res) => {
-  res.send('<h1>El pago haya sido “rechazado” o no ha finalizado</h1>')
+  res.send('<h1>El pago ha sido “rechazado” o no ha finalizado</h1>')
 })
 
 app.get('/pending', (req, res) => {
