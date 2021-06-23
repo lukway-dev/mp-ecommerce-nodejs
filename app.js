@@ -25,8 +25,8 @@ app.get('/detail', async (req, res) => {
   res.render('detail', data)
 })
 
-// app.post('/notification', (req, res) => {
-//   res.json(req.)
-// })
+app.get('/notification', (req, res) => {
+  res.json(req.body)
+})
 
 app.listen(port)
