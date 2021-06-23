@@ -41,7 +41,7 @@ const createPreference = (data) => {
       failure: '/failure',
       pending: '/pending'
     },
-    // auto_return: 'approved',
+    auto_return: 'approved',
     payment_methods: {
       excluded_payment_methods: [
         {
@@ -55,7 +55,7 @@ const createPreference = (data) => {
       ],
       installments: 6
     },
-    notification_url: '/notifications'
+    notification_url: 'https://lukway-dev-mp-commerce-nodejs.herokuapp.com/notification'
     // external_reference: 'lukway.developer@gmail.com'
     // integrator_id: 'dev_24c65fb163bf11ea96500242ac130004'
   }
