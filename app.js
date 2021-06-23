@@ -19,9 +19,14 @@ app.get('/', function (req, res) {
 
 app.get('/detail', async (req, res) => {
   const data = req.query
-  const preferenceId = await createPreference(req.query)
+  const { preferenceId, initPoint } = await createPreference(req.query)
   data.preferenceId = preferenceId
+  data.initPoint = initPoint
   res.render('detail', data)
 })
+
+// app.post('/notification', (req, res) => {
+//   res.json(req.)
+// })
 
 app.listen(port)

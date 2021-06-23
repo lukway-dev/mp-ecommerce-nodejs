@@ -63,7 +63,10 @@ const createPreference = (data) => {
   const preferenceId = mercadopago.preferences.create(preference)
     .then(function (response) {
       // This value replaces the String "<%= global.id %>" in your HTML
-      return response.body.id
+      return {
+        preferenceId: response.body.id,
+        initPoint: response.body.init_point
+      }
     }).catch(function (error) {
       console.log(error)
     })
