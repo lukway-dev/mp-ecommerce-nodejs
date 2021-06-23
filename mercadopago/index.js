@@ -55,14 +55,13 @@ const createPreference = (data) => {
       ],
       installments: 6
     },
-    notification_url: 'https://lukway-dev-mp-commerce-nodejs.herokuapp.com/notification'
-    // external_reference: 'lukway.developer@gmail.com'
-    // integrator_id: 'dev_24c65fb163bf11ea96500242ac130004'
+    notification_url: 'https://lukway-dev-mp-commerce-nodejs.herokuapp.com/notification',
+    external_reference: 'lukway.developer@gmail.com',
+    integrator_id: 'dev_24c65fb163bf11ea96500242ac130004'
   }
 
   const preferenceId = mercadopago.preferences.create(preference)
     .then(function (response) {
-      // This value replaces the String "<%= global.id %>" in your HTML
       return {
         preferenceId: response.body.id,
         initPoint: response.body.init_point
