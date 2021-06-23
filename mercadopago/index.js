@@ -37,9 +37,9 @@ const createPreference = (data) => {
       }
     },
     back_urls: {
-      success: '/success',
-      failure: '/failure',
-      pending: '/pending'
+      success: 'https://lukway-dev-mp-commerce-nodejs.herokuapp.com/success',
+      failure: 'https://lukway-dev-mp-commerce-nodejs.herokuapp.com/failure',
+      pending: 'https://lukway-dev-mp-commerce-nodejs.herokuapp.com/pending'
     },
     auto_return: 'approved',
     payment_methods: {
