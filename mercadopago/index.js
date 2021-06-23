@@ -7,14 +7,13 @@ mercadopago.configure({
 
 // Create a preference object
 const createPreference = (data) => {
-  console.log(`https://lukway-dev-mp-commerce-nodejs.herokuapp.com/${(data.img).slice(2, -1)}`)
   const preference = {
     items: [
       {
         id: '1234',
         title: data.title,
         description: 'Dispositivo móvil de Tienda e-commerce',
-        picture_url: `https://lukway-dev-mp-commerce-nodejs.herokuapp.com/${(data.img).slice(0, 2)}`,
+        picture_url: `https://lukway-dev-mp-commerce-nodejs.herokuapp.com/${(data.img).slice(2, -1)}`,
         unit_price: parseInt(data.price),
         quantity: parseInt(data.unit)
       }
