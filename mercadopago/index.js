@@ -7,6 +7,7 @@ mercadopago.configure({
 
 // Create a preference object
 const createPreference = (data) => {
+  console.log(`https://lukway-dev-mp-commerce-nodejs.herokuapp.com/${(data.img).slice(2, -1)}`)
   const preference = {
     items: [
       {
