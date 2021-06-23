@@ -39,16 +39,15 @@ app.post('/notification', (req, res) => {
   return res.status(200)
 })
 
-app.get('success', (req, res) => {
-  res.send('<h1>Pago realizado con exito</h1>')
+app.get('/success', (req, res) => {
   res.json(req.query)
 })
 
-app.get('failure', (req, res) => {
+app.get('/failure', (req, res) => {
   res.send('<h1>El pago haya sido “rechazado” o no ha finalizado</h1>')
 })
 
-app.get('pending', (req, res) => {
+app.get('/pending', (req, res) => {
   res.send('<h1>Ha decidido pagar con un medio de pago offline (ticket). El pago esta pendiente</h1>')
 })
 app.listen(port)
