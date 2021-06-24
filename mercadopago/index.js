@@ -13,7 +13,7 @@ const createPreference = (data) => {
         id: '1234',
         title: data.title,
         description: 'Dispositivo móvil de Tienda e-commerce',
-        picture_url: `https://lukway-dev-mp-commerce-nodejs.herokuapp.com/${(data.img).slice(2, -1)}`,
+        picture_url: `https://lukway-dev-mp-commerce-nodejs.herokuapp.com/${(data.img).slice(2)}`,
         unit_price: parseInt(data.price),
         quantity: parseInt(data.unit)
       }
